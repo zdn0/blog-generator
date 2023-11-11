@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Blog</title>
+    <link>http://blog.xxdstudio.com/post/</link>
+    <description>Recent content in Posts on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 11 Apr 2022 01:33:50 +0000</lastBuildDate><atom:link href="http://blog.xxdstudio.com/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aab包测试方法</title>
+      <link>http://blog.xxdstudio.com/post/2022-4-11/</link>
+      <pubDate>Mon, 11 Apr 2022 01:33:50 +0000</pubDate>
+      
+      <guid>http://blog.xxdstudio.com/post/2022-4-11/</guid>
+      <description>前言  由于现在Google提审包体只能使用aab包体，不再使用apk包体，当我们想进行测试的时候将aab扔进手机内时无法直接安装的，是需要将aab转为成apks包体，然后使用命令行给手机进行安装才可以的，故今天来记录一下如何进行测试。
+方法说明 MAC  首先需要安装bundletool  brew install bundletool
+将aab转成apks  bundletool build-apks --bundle=AAB文件名称.aab --output=APKS文件名称.apks --ks=密匙文件名.jks --ks-pass=pass:密匙文件密码 --ks-key-alias=密匙名 --key-pass=pass:密匙密码
+若无jks则使用
+bundletool build-apks --bunlde=AAB文件名称.aab --output=./APKS文件名称.apks
+安装apks (*需要使用USB将手机连接到电脑)  bundletool install-apks --apks=APKS文件名称.apks
+WINDOW  首先需要下载bundletool.jar文件  https://github.com/google/bundletool/releases
+将aab转成apks  java -jar bundletool文件名.jar build-apks --bundle=AAB文件名称.aab --output=APKS文件名称.apks --ks=密匙文件名.jks --ks-pass=pass:密匙文件密码 --ks-key-alias=密匙名 --key-pass=pass:密匙密码
+安装apks (*需要使用USB将手机连接到电脑)  java -jar bundletool文件名.jar install-apks --apks=APKS文件名称.apks
+总结  以上即为aab测试的方法，虽然目前都是先构建apk进行测试，然后测试完毕后直接构建aab进行交付，按理来说应该不会有什么问题出现，偶尔还是将aab通过安装在手机上进行测试测试比较保险，那今天内容就到这里结束了！
+ 最后的最后，一碗鸡汤奉上，Sweat is the lubricant of success。</description>
+    </item>
+    
+    <item>
+      <title>从零搭建公司项目组后台(1)</title>
+      <link>http://blog.xxdstudio.com/post/2022-3-9/</link>
+      <pubDate>Tue, 08 Mar 2022 16:24:00 +0000</pubDate>
+      
+      <guid>http://blog.xxdstudio.com/post/2022-3-9/</guid>
+      <description>前言  由于公司项目组存在大量项目平台打包需求，每个项目构建逻辑都大同小异，虽然项目组已经有一款其他同事开发的打包机用于打包，但是还是感觉不够DIY，很多东西都无法配置，导致每个项目构建时前期都需要配置许多东西才可以构建，所以还是希望能更加傻瓜式的进行项目打包，刚好自己也想尝试开发一个后台系统，用自己当年只学了个开头，然后被骗去进行游戏开发的React，所以就开始吧！
+项目规划  首先我们规划一下此次想要开发的(v1.0.0)版本内容。
+前端 技术栈：React + AntDesign (*这个套装就不解释了)
+主要内容：
+  游戏项目
+ 项目列表 (新建项目/配置游戏名称/游戏参数/构建项目等) 构建记录 (构建记录展示)    项目工具(不在v1.0.0版本规划内)
+ 在线工具 (针对项目or平台的工具) 工具资源 (点击下载工具资源)    规范文档
+ 平台规范与事项 (平台制作规范与遇到的问题) 项目规范与事项 (项目制作规范与遇到的问题)    网站导航
+ 公司网站 工具类网站 资源类网站    后端 技术栈：Node.js + MySQL
+主要内容：
+ ​	基础后端服务  文件服务器搭建 存取游戏项目配置 存取网站导航信息 存取构建记录   项目打包服务  根据项目获取配置项进行构建 构建状态反馈 (成功通知，失败通知)   数据备份逻辑  每月及时备份项目数据    环境需求  Node.</description>
+    </item>
+    
+    <item>
+      <title>技术分析&amp;技术规划(2022年)</title>
+      <link>http://blog.xxdstudio.com/post/2022-2-25/</link>
+      <pubDate>Fri, 25 Feb 2022 07:24:14 +0000</pubDate>
+      
+      <guid>http://blog.xxdstudio.com/post/2022-2-25/</guid>
+      <description>前言  在如今内卷严重的互联网环境下，我觉得每年抽个时间对自己的技术面进行一个完整的分析和规划是十分有必要的。当你对自己技术有一定的认知后，在工作上需要对技术项目进行评估或者对自己往后的日子进行规划，也是有一定的帮助。所以就开始吧！
+技术分析 编程语言  JavaScript TypeScript C++ Java Object-C  编程技术  CocoCreator Node.js React HTML+CSS+JS  辅助工具  VSCode PS、AE、PR 各平台小游戏开发工具 Android Studio Xcode   以上为自己认为能使用上的技术和工具，编程语言方面目前主要还是偏向于JS/TS进行开发，Java/Object-C也只是还在皮毛阶段，主要用于处理构建Android和IOS平台包体时接入SDK或者进行平台适配操作，C++则还是处于自学阶段，估计连基础的基础都还没学透。编辑技术方面由于工作方面是使用CocosCreator进行游戏开发，所以熟练程度不言而语，Node.js也是一知半解，能简单的进行后端搭建和开发。React则是之前有进行过后台开发，也是能从零搭建一套简单的后台，HTML+CSS则是第一份工作主要是进行网页重构，所以现在也算是得心应手吧，当然这么多年过去，具体使用时能有多得心应手还要进一步考究了。工具类就不说了，都是基础操作配合工作使用。
+技术规划 编程语言   JavaScript/TypeScript
+JS/TS的新特性学习/进一步加固基础
+  C++
+学习基础/加固基础 (学习和阅读引擎底层)
+  C#
+学习基础/加固基础 (Unity使用)
+  编程技术   CocosCreator2.x/CocoCreator3.x
+3.x学习与使用/2.x进一步学习与加固
+  React/Node.js
+进一步学习/加固基础 (配合一套后台来学习)
+  U3D/UE4
+学习基础/加固基础 (扩展游戏开发技术)
+  其他   Shader
+学习基础/加固基础</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://blog.xxdstudio.com/post/helloworld/</link>
+      <pubDate>Fri, 05 May 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.xxdstudio.com/post/helloworld/</guid>
+      <description>Hello World </description>
+    </item>
+    
+  </channel>
+</rss>

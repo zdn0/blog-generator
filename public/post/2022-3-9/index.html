@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Hugo 0.92.2" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="">
+  <meta property="og:url" content="http://blog.xxdstudio.com/post/2022-3-9/">
+
+  <title>从零搭建公司项目组后台(1) - Blog</title>
+  <meta property="og:title" content="从零搭建公司项目组后台(1) - Blog">
+  <meta property="og:type" content="article">
+  <meta name="description" content="">
+
+  <link rel="stylesheet" href="/css/fonts.css">
+  <link rel="stylesheet" href="/css/highlight.css">
+  <link rel="stylesheet" href="/css/journal.css">
+  <link href="/index.xml" rel="alternate" type="application/rss+xml" title="Blog">
+
+</head>
+
+<body>
+  <div class="container">
+
+    <nav class="site-nav">
+      <a href="http://blog.xxdstudio.com/">Index</a>
+    </nav>
+
+
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">从零搭建公司项目组后台(1)</h1>
+      <time class="post-date" datetime="2022-03-08 16:24:00 UTC">08 Mar 2022</time>
+    </header>
+
+    <h2 id="前言">前言</h2>
+<p>  由于公司项目组存在大量项目平台打包需求，每个项目构建逻辑都大同小异，虽然项目组已经有一款其他同事开发的打包机用于打包，但是还是感觉不够DIY，很多东西都无法配置，导致每个项目构建时前期都需要配置许多东西才可以构建，所以还是希望能更加傻瓜式的进行项目打包，刚好自己也想尝试开发一个后台系统，用自己当年只学了个开头，然后被骗去进行游戏开发的React，所以就开始吧！</p>
+<h2 id="项目规划">项目规划</h2>
+<p>  首先我们规划一下此次想要开发的(v1.0.0)版本内容。</p>
+<h3 id="前端">前端</h3>
+<p>技术栈：React + AntDesign  (*这个套装就不解释了)</p>
+<p>主要内容：</p>
+<ul>
+<li>
+<p>游戏项目</p>
+<ul>
+<li>项目列表  (新建项目/配置游戏名称/游戏参数/构建项目等)</li>
+<li>构建记录 (构建记录展示)</li>
+</ul>
+</li>
+<li>
+<p><del>项目工具</del>(不在v1.0.0版本规划内)</p>
+<ul>
+<li><del>在线工具 (针对项目or平台的工具)</del></li>
+<li><del>工具资源 (点击下载工具资源)</del></li>
+</ul>
+</li>
+<li>
+<p>规范文档</p>
+<ul>
+<li>平台规范与事项 (平台制作规范与遇到的问题)</li>
+<li>项目规范与事项 (项目制作规范与遇到的问题)</li>
+</ul>
+</li>
+<li>
+<p>网站导航</p>
+<ul>
+<li>公司网站</li>
+<li>工具类网站</li>
+<li>资源类网站</li>
+</ul>
+</li>
+</ul>
+<h3 id="后端">后端</h3>
+<p>技术栈：Node.js + MySQL</p>
+<p>主要内容：</p>
+<ul>
+<li>​	基础后端服务
+<ul>
+<li>文件服务器搭建</li>
+<li>存取游戏项目配置</li>
+<li>存取网站导航信息</li>
+<li>存取构建记录</li>
+</ul>
+</li>
+<li>项目打包服务
+<ul>
+<li>根据项目获取配置项进行构建</li>
+<li>构建状态反馈 (成功通知，失败通知)</li>
+</ul>
+</li>
+<li>数据备份逻辑
+<ul>
+<li>每月及时备份项目数据</li>
+</ul>
+</li>
+</ul>
+<h3 id="环境需求">环境需求</h3>
+<ul>
+<li>Node.js</li>
+<li>MySQL</li>
+<li>CocoCreator</li>
+<li>Git</li>
+<li>Java</li>
+<li>Yarn  (Node包)</li>
+</ul>
+<p>  以上即是v1.0.0整体规划，目前规划前后端使用轮询方式来进行沟通，等后期可能调整为WebSocket，这里就不过多讨论。</p>
+<h2 id="总结">总结</h2>
+<p>  本篇主要进行后台的项目规划，有一个良好的前期规划才能使开发期间不会犹犹豫豫，只需要按着目标一步一一个脚印进行即可，不管是开发新项目还是开发一个小功能，前期理清逻辑再进行开发是十分有必要的，这样才不会中途发现开发内容与自己所想要的不符合导致又重新开始。回到主题，下期我们应该进行项目的前期环境搭建，请敬请期待吧！</p>
+<p>  最后的最后，一碗鸡汤奉上，To make everyday count!</p>
+<h2 id="往期回顾">往期回顾</h2>
+<p><a href="http://blog.xxdstudio.com/post/2022-3-9/">从零搭建公司项目组后台(1)</a></p>
+
+
+  </article>
+
+
+      <footer class="site-footer">
+        <span itemscope itemtype="http://schema.org/Person">
+          <link itemprop="url" href="http://blog.xxdstudio.com/">
+          <span itemprop="name"></span>
+
+          <br>
+
+          
+
+          
+
+          
+        </span>
+
+        <!-- Build date: Sun, 18 Sep 2022 23:25:47 CST -->
+      </footer>
+    </div>
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  </body>
+</html>
+
