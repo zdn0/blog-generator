@@ -1,5 +1,7 @@
 # 使用说明
 
+github action 自动化构建
+
 **安装HUGO**
 
 brew install hugo
